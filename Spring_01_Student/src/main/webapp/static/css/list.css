@@ -1,0 +1,23 @@
+table.list_table{
+    width: 90vw;
+    margin: 20px auto;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+table.list_table tr:hover {
+    cursor: pointer;
+
+}
+
+table.list_table th {
+    background-color: #ddd;
+    border-top: 1px solid #ccc;
+}
+
+table.list_table th,
+table.list_table td{
+    padding: 0.3rem;
+    border-bottom: 1px solid #ccc;
+}
