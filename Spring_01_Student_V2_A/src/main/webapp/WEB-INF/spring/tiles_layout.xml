@@ -18,4 +18,25 @@
         <!-- 위 definition을 상속받아서 content 부분만 재설정하는 override-->
         <put-attribute name="content" value="/WEB-INF/views/home.jsp"/>
     </definition>
+
+    <!--
+    와일드 카드
+    * : 모든 것 (단어, 스펠 개수에 관계없이)
+    ? : 스펠의 개수만큼
+        ex) a? = a1, a2, aa, ab, ac ... 등과 일치하는 패턴
+            a?? = a11, a21, abb, acc .. 등과 일치하는 패턴
+    -->
+    <definition name="ST/*" extends="default">
+        <put-attribute name="content"
+                       value="/WEB-INF/views/student/{1}.jsp"/>
+    </definition>
+
+    <!-- 별이 두개이므로
+        {1}대신에 첫번째 * 값,
+        {2} 대신에 두번째 * 값 -->
+    <definition name="*/*" extends="default">
+        <put-attribute name="content"
+                       value="/WEB-INF/views/{1}/{2}.jsp"/>
+
+    </definition>
 </tiles-definitions>

@@ -8,6 +8,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    text-align: center;
     background-color: darkslateblue;
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -45,6 +46,6 @@ body {
     width: 100vw;
 }
 
-setcion {
+section.content {
     flex: 1;
 }
