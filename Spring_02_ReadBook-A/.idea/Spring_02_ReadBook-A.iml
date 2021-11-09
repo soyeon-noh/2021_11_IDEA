@@ -17,6 +17,9 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Jpa Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/jpa-context.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

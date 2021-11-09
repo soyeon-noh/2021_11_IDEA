@@ -7,14 +7,29 @@
 
     <context:component-scan base-package="com.callor.readbook"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <!-- return 되는 것이 text이거나 json이면 UTF-8로 전환해라-->
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                        <!-- spring에서는 쓸일이 많진 않겠지만
+                        시리얼라이징 할때 apllication/json이 아니라
+                        text/json으로 넘어가는 경우가 있다
+                        그걸 위한 코드-->
+                        <value>text/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass"
                   value="org.springframework.web.servlet.view.tiles3.TilesView"/>
-        <property name="order" value="1"/>
     </bean>
-
     <bean id="tilesConfigurer"
           class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">

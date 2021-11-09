@@ -7,7 +7,7 @@
 header {
     display: flex;
     flex-direction: column;
-    width: 1000px;
+    width: 100vw;
     margin: 0 auto;
 
     background-color: #3A1D1D;
@@ -26,15 +26,17 @@ header p {
 }
 
 footer {
-    width: 1000px;
-    margin: 0 auto;
+    width: 100vw;
 
+text-align: center;
     color: white;
     background-color: #3A1D1D;
+    padding: 1rem;
+
 }
 
 address {
-    background-color: #FC5563;
+
 }
 
 section {
@@ -43,7 +45,7 @@ section {
 
     background-color: #D1E7E0;
 
-    width: 1000px;
+    width: 100vw;
     margin: 0 auto;
     padding: 20px 0;
     text-align: center;
@@ -73,8 +75,10 @@ section div textarea {
 div.three{
     display: flex;
     width: 60%;
-    margin: 0 auto;
+    margin: 0.3rem auto;
+    justify-content: space-between;
 }
+
 
 .button_box {
     text-align: right;
