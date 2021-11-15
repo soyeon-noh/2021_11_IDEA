@@ -76,8 +76,29 @@
         font-weight: bold;
     }
 </style>
+<%--
+form : form tag를 이용한 입력폼 디자인
+security 에서 form에 데이터를 입력하고
+서버로 전송할 때는 반드시 POST 방식으로 전송해야 한다
 
-<form:form cssClass="join" method="POST">
+GET 방식으로 데이터를 전송할 때는 인증(로그인정보)와 관련된
+어떤 기능을 수행할 수 없다
+인증과 관련하여 어떤 기능을 수행하려면 모든 것은 POST로 요청해야 한다
+
+또한 POST 방식으로 요청을 할 때는 반드시 _csrf.token 정보를 함께 전송해야 한다
+그렇지 않으면 모든 요청에 대해서 서버에서 거부한다
+
+form 으로 만든 입력변수중에 _csrf.token 값에 서버로부터 전달받은
+실제 token 을 부착하는 코드를 만들어야 한다.
+
+이러한 절차가 순수 html 로 만든 form 에서는 상당히 번거로운 일이 된다.
+따라서 spring jsp 코드에서는 spring form taglibs 를 import 하고
+form:form 방식으로 HTML 코드를 작성한다.
+
+form:form 방식으로 HTML 코드를 작성하게 되면
+자동으로 _csrf.token 과 관련된 코드가 추가된다.
+--%>
+<form:form cssClass="join">
     <div>
     <input name="username" id="username" placeholder="사용자 이름"/>
     </div>
