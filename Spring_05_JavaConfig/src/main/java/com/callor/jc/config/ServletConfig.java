@@ -25,7 +25,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = {
         "com.callor.jc.controller",
-        "com.callor.jc.service"
+        "com.callor.jc.service",
+        "com.callor.jc.config.beans"
 })
 public class ServletConfig implements WebMvcConfigurer {
 
@@ -34,7 +35,7 @@ public class ServletConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/static/**")
-                .addResourceLocations("/static");
+                .addResourceLocations("/static/");
 
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
